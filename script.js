@@ -1,5 +1,5 @@
-function calc(stroka_vvoda) {
-  var variable_oshibka = 0,chislo;
+function calculator(stroka_vvoda) {
+  var variable_oshibka = 0,output_number;
   let array_symbols = [];
   array_symbols = stroka_vvoda.split("");
   for (var i = 0; i <= array_symbols.length; i++) {
@@ -10,7 +10,10 @@ function calc(stroka_vvoda) {
     }
   }
   if (variable_oshibka === 0) {
-    chislo = eval(stroka_vvoda);
+    output_number = eval(stroka_vvoda);
   }
-  return chislo;
+  else{
+    output_number="The string contains nonnumeric characters";
+  }
+  return output_number;
 }

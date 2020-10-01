@@ -1,17 +1,15 @@
 function calc(stroka_vvoda) {
-  var oshibka = 0,
-    chislo;
-  let arr = [];
-  arr = stroka_vvoda.split("");
-  for (var i = 0; i <= arr.length; i++) {
-    if (arr[i] != "+" && arr[i] != "-") {
-      if (isNaN(arr[i]) != false) {
-        oshibka = 1;
+  var variable_oshibka = 0,chislo;
+  let array_symbols = [];
+  array_symbols = stroka_vvoda.split("");
+  for (var i = 0; i <= array_symbols.length; i++) {
+    if (array_symbols[i] != "+" && array_symbols[i] != "-") {
+      if (isNaN(array_symbols[i]) != false) {
+        variable_oshibka = 1;
       }
     }
   }
-  console.log(oshibka);
-  if (oshibka === 0) {
+  if (variable_oshibka === 0) {
     chislo = eval(stroka_vvoda);
   }
   return chislo;

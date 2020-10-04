@@ -1,19 +1,20 @@
-function calculator(stroka_vvoda) {
-  var variable_oshibka = 0,output_number;
-  let array_symbols = [];
-  array_symbols = stroka_vvoda.split("");
-  for (var i = 0; i <= array_symbols.length; i++) {
-    if (array_symbols[i] != "+" && array_symbols[i] != "-") {
-      if (isNaN(array_symbols[i]) != false) {
-        variable_oshibka = 1;
+function calculator(InputLine) {
+  var error = 0,OutputNumber;
+  let ArraySymbols = [];
+  ArraySymbols = InputLine.split("");
+  for (var i = 0; i < ArraySymbols.length; i++) {
+    if (ArraySymbols[i] != "+" && ArraySymbols[i] != "-" && ArraySymbols[i] !="(" && ArraySymbols[i] !=")") {
+      if (isNaN(ArraySymbols[i]) != false) {
+        error = 1;
       }
     }
   }
-  if (variable_oshibka === 0) {
-    output_number = eval(stroka_vvoda);
+  if (error === 0) {
+    OutputNumber = eval(InputLine);
   }
   else{
-    output_number="The string contains nonnumeric characters";
+    OutputNumber="The string contains nonnumeric characters";
   }
-  return output_number;
+  return OutputNumber;
 }
+console.log(calculator("1+(-2)"));

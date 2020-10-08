@@ -1,27 +1,27 @@
-function calculator(InputLine) {
+function calculator(inputLine) {
   var error = 0,
-    OutputNumber;
-  let ArraySymbols = [];
-  ArraySymbols = InputLine.split("");
-  for (var i = 0; i < ArraySymbols.length; i++) {
+    result;
+  let inputLineCharacters = [];
+  inputLineCharacters = inputLine.split("");
+  for (var i = 0; i < inputLineCharacters.length; i++) {
     if (
-      ArraySymbols[i] != "+" &&
-      ArraySymbols[i] != "-" &&
-      ArraySymbols[i] != "(" &&
-      ArraySymbols[i] != ")" &&
-      ArraySymbols[i] != "*" &&
-      ArraySymbols[i] != "/"
+      inputLineCharacters[i] !== "+" &&
+      inputLineCharacters[i] !== "-" &&
+      inputLineCharacters[i] !== "(" &&
+      inputLineCharacters[i] !== ")" &&
+      inputLineCharacters[i] !== "*" &&
+      inputLineCharacters[i] !== "/"
     ) {
-      if (isNaN(ArraySymbols[i]) != false) {
+      if (isNaN(inputLineCharacters[i]) !== false) {
         error = 1;
       }
     }
   }
   if (error === 0) {
-    OutputNumber = eval(InputLine);
+    result = eval(inputLine);
   } else {
-    OutputNumber = "The string contains nonnumeric characters";
+    result = "The string contains nonnumeric characters";
   }
-  return OutputNumber;
+  return result;
 }
-console.log(calculator("2/(-4)"));
+console.log(calculator("2*(-4)"));
